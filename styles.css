@@ -1,0 +1,244 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Bungee', sans-serif;
+    font-size: 32px;
+    color: #f2f2f2;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #ff6fa8;
+    text-shadow:
+        0 0 8px #ff6fa8,
+        0 0 16px #ff8fc0,
+        0 0 28px #ffb3d4;
+}
+
+/* NAV */
+nav {
+    transition: 0.3s ease;
+}
+
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff6fa8;
+    text-shadow:
+        0 0 6px #ff6fa8,
+        0 0 12px #ff8fc0,
+        0 0 20px #ffb3d4;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background-image: url(images/hero.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.55);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* HERO TITLE */
+.hero-title {
+    font-family: 'Bungee', sans-serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #f2f2f2;
+    animation: pulseGlow 2.2s infinite ease-in-out;
+}
+
+/* GLOW ANIMATION */
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 6px #ff6fa8; }
+    50% {
+        text-shadow:
+            0 0 10px #ff6fa8,
+            0 0 20px #ff8fc0,
+            0 0 35px #ffb3d4;
+    }
+    100% { text-shadow: 0 0 6px #ff6fa8; }
+}
+
+/* CTA BUTTON */
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff6fa8, #ff8fc0);
+    color: #000;
+    font-family: 'Bungee', sans-serif;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s ease;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cta-btn:hover {
+    box-shadow:
+        0 0 10px #ff6fa8,
+        0 0 20px #ff8fc0,
+        0 0 35px #ffb3d4;
+    transform: scale(1.07);
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* GRID */
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.grid-item {
+    background-color: #000;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 111, 168, 0.2);
+    transition: 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 10px #ff6fa8,
+        0 0 20px #ff8fc0,
+        0 0 35px #ffb3d4;
+}
+
+/* SUBPAGE HERO */
+.subpage-hero {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.subpage-content {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.subpage-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 30px 0;
+    box-shadow: 0 0 12px rgba(255, 111, 168, 0.3);
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1100px) {
+    .grid-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-section {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+
+    .subpage-hero {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    nav a {
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    #menu-toggle:checked + .hamburger + nav {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 32px;
+    }
+}
